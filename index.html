@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title">Hangman Game</div>
+    <div class="container">
+        <div class="hangmanContainer">
+            <!-- <img src="images/kick-chair-hang-self.gif" alt=""> -->
+             <div class="hcontainer">
+                <div class="hangman">
+                    <div class="pole"></div>
+                    <div class="hpole"></div>
+                    <div class="hdpole"></div>
+                    <div class="rope"></div>
+                    <div class="head"></div>
+                    <div class="body"></div>
+                    <div class="hand"></div>
+                    <div class="hand2"></div>
+                    <div class="body2"></div>
+                    <div class="leg"></div>
+                    <div class="leg2"></div>
+                 </div>
+             </div>
+            
+        </div>
+        <div class="sideContainer">
+            <div class="guess">
+                <div class="score">score: <span class="scoreValue">0</span></div>
+               <div class="lifes">
+                <img src="images/heart-fill.png" alt="">
+                <img src="images/heart-fill.png" alt="">
+                <img src="images/heart-fill.png" alt="">
+                <img src="images/heart-fill.png" alt="">
+                <img src="images/heart-fill.png" alt="">
+               </div>
+            </div>
+            <div class="question_answer">
+                <div class="answer">
+                    <input type="text" class="inputField">
+                    <button class="cBtn">Check</button>
+                </div>
+                <div class="hint">
+                  <span>Hint: </span> <p class="qHint"></p>
+                </div>
+                <div class="keyboardContainer">
+                    <div id="keyboard"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

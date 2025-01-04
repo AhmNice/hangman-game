@@ -1,0 +1,203 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: myfont;
+}
+@font-face {
+    font-family: myfont;
+    src: url(font/BarlowSemiCondensed-Regular.ttf);
+}
+.title{
+    width: 100%;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.container{
+   display: flex;
+   gap: 10px;
+    gap: 5%;
+    width: 100%;
+}
+.hangmanContainer{
+    width: 30%;
+    display: grid;
+    place-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    overflow: hidden;
+    align-items: center;
+}
+.sideContainer{
+    width: 65%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hangman{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    padding-left: 20px;
+}
+.hcontainer{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.pole{
+    width: 10px;
+    background-color: white;
+    border: 1px solid black;
+    height: 200px;
+    position: absolute;
+}
+.hpole{
+    width: 100px;
+    border: 1px solid black;
+    height: 10px;
+    position: absolute;
+    background-color: white;
+}
+.hdpole{
+    width: 45px;
+    border: 1px solid black;
+    height: 10px;
+    position: absolute;
+    background-color: white;
+    top: 200px;
+    left: 2.5px;
+}
+.rope{
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    border: 0.5px solid black;
+    top: 10px;
+    left: 90px;
+}
+.head{
+    position: absolute;
+    width: 20px;
+    border-radius: 50%;
+    height: 20px;
+    border: 0.5px solid black;
+    top: 40px;
+    left: 81px;
+}
+.body{
+    height: 10px;
+    border: 0.5px solid black;
+    position: absolute;
+    top: 60px;
+    left: 90px;
+}
+.hand,.leg{
+    height: 15px;
+    border: 0.5px solid black;
+    position: absolute;
+    top: 69px;
+    left: 85px;
+    transform: rotate(40deg);
+}
+.hand2,.leg2{
+    height: 15px;
+    border: 0.5px solid black;
+    position: absolute;
+    top: 69px;
+    left: 95px;
+    transform: rotate(-40deg);
+}
+.leg,.leg2{
+    top: 96px;
+}
+.body2{
+    height: 30px;
+    border: 0.5px solid black;
+    position: absolute;
+    top: 70px;
+    left: 90px;
+}
+.guess{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    padding: 15px;
+    padding-left: 0;
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+button{
+    background-color:hsl(214, 47%, 23%) ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 50px;
+}
+.answer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.hint{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+.hint span{
+    text-transform: uppercase;
+    padding-right: 10px;
+    font-weight: 600;
+}
+.hangmanContainer img{
+    width: 150px;
+}
+#keyboard {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columns */
+    gap: 10px;
+}
+.sideContainer{
+    padding: 20px;
+}
+.question_answer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.key {
+    background-color: hsl(214, 47%, 23%);
+    color: white;
+    font-weight: 600;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 10px;
+    user-select: none;
+    border: 1px solid #bbb;
+}
+  
+.key:hover {
+    background-color: #bbb;
+}
+.clicked{
+    background-color: #bbb;
+}  
