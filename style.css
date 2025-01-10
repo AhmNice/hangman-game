@@ -207,3 +207,36 @@ button{
 .clicked{
     background-color: #bbb;
 }  
+@media (max-width:576px){
+    .container{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .hangmanContainer{
+        width: 100%;
+    }
+    .hcontainer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .keyboardContainer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        overflow: hidden;
+    }
+    #keyboard {
+        width: 0%;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr); /* 10 columns */
+        gap: 10px;
+    }
+    .key{
+        padding: 10px;
+    }
+}
