@@ -92,6 +92,7 @@
     border: 0.5px solid black;
     top: 40px;
     left: 81px;
+    display:none;
 }
 .body{
     height: 10px;
@@ -99,6 +100,7 @@
     position: absolute;
     top: 60px;
     left: 90px;
+    display:none;
 }
 .hand,.leg{
     height: 15px;
@@ -107,6 +109,7 @@
     top: 69px;
     left: 85px;
     transform: rotate(40deg);
+    display:none;
 }
 .hand2,.leg2{
     height: 15px;
@@ -115,9 +118,11 @@
     top: 69px;
     left: 95px;
     transform: rotate(-40deg);
+    display:none;
 }
 .leg,.leg2{
     top: 96px;
+    display:none;
 }
 .body2{
     height: 30px;
@@ -125,6 +130,7 @@
     position: absolute;
     top: 70px;
     left: 90px;
+    display:none;
 }
 .guess{
     width: 100%;

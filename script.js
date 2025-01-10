@@ -102,17 +102,22 @@ const keys = [
   
   // Display the current question
   function displayQuestion() {
-    if (currentIndex < sortedQuestions.length) {
-      const question = sortedQuestions[currentIndex];
-      questionField.textContent = question.hint;
-      inputField.value = ''; // Clear input field for new question
-    } else {
-      questionField.textContent = `Game Over! Your score: ${score}`;
+    if(attempts > 0){
+      if (currentIndex < sortedQuestions.length) {
+        const question = sortedQuestions[currentIndex];
+        questionField.textContent = question.hint;
+        inputField.value = ''; // Clear input field for new question
+      } else {
+        questionField.textContent = `Game Over! Your score: ${score}`;
+      }
+    }else{
+       questionField.textContent = `Game Over! Your score: ${score}`
     }
   }
   
   // Validate answer
   function checkAnswer() {
+   if(attempts>0){
     const answer = inputField.value.trim().toLowerCase();
     if (answer === sortedQuestions[currentIndex].answer.toLowerCase()) {
       score++;
@@ -121,11 +126,75 @@ const keys = [
       displayQuestion();
     }else{
         attempts --;
+        updateLife(attempts);
+        updateHangman(attempts)
+    }
+   }else{
+    alert(`Game Over! Your score: ${score}`);
+   }
+  }
+  function updateLife(attempts){
+    const lives = document.querySelectorAll('.life');
+    switch (attempts) {
+      case 4:
+        lives[4].src='images/icons8-heart-32.png'
+        break;
+      case 3:
+        lives[3].src='images/icons8-heart-32.png'
+        break;
+      case 2:
+        lives[2].src='images/icons8-heart-32.png'
+        break;
+      case 1:
+        lives[1].src='images/icons8-heart-32.png'
+        break;
+      case 0:
+        lives[0].src='images/icons8-heart-32.png'
+        alert(`Game Over! Your score: ${score}`);
+        break;
+      default:
+        break;
     }
   }
-  function updateLife(){
-    
-  }
+  function updateHangman(attempts) {
+    switch (attempts) {
+      case 5:
+        document.querySelector('.head').style.display = 'none';
+        document.querySelector('.body').style.display = 'none';
+        document.querySelector('.hand').style.display = 'none';
+        document.querySelector('.hand2').style.display = 'none';
+        document.querySelector('.body2').style.display = 'none';
+        document.querySelector('.leg').style.display = 'none';
+        document.querySelector('.leg2').style.display = 'none';
+        break;
+      case 4:
+        document.querySelector('.head').style.display = 'block';
+        break;
+      case 3:
+        document.querySelector('.body').style.display = 'block';
+        break;
+      case 2:
+        document.querySelector('.hand').style.display = 'block';
+        document.querySelector('.hand2').style.display = 'block';
+        break;
+      case 1:
+        document.querySelector('.body2').style.display = 'block';
+        break;
+      case 0:
+        document.querySelector('.leg').style.display = 'block';
+        document.querySelector('.leg2').style.display = 'block';
+        document.querySelector('.hangman').style.display = 'none';
+        
+        
+        const hangmanImage = document.createElement('img');
+        hangmanImage.src = 'images/kick-chair-hang-self.gif';
+        document.querySelector('.hangmanContainer').appendChild(hangmanImage);
+        break;
+      default:
+        break;
+    }
+}
+
   // Start the game
   async function startGame() {
     await sortQuestions();
