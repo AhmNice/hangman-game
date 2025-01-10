@@ -129,8 +129,6 @@ const keys = [
         updateLife(attempts);
         updateHangman(attempts)
     }
-   }else{
-    alert(`Game Over! Your score: ${score}`);
    }
   }
   function updateLife(attempts){
@@ -150,7 +148,7 @@ const keys = [
         break;
       case 0:
         lives[0].src='images/icons8-heart-32.png'
-        alert(`Game Over! Your score: ${score}`);
+      //  alert (`Game Over! Your score: ${score}`);
         break;
       default:
         break;
